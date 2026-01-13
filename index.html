@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>buahta.makassar </title>
+    
+    <link rel="icon" type="image/png" href="gambar/buahta.makassar.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bg-blob"></div>
+
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="gambar/buahta.makassar.png" alt="Logo" class="nav-logo" onerror="this.src='https://cdn-icons-png.flaticon.com/512/415/415733.png'">
+                <span class="fw-bold text-success">buahta.makassar</span>
+            </a>
+            <div class="ms-auto d-flex align-items-center gap-3">
+                <a href="https://instagram.com/buahta.makassar" target="_blank" class="text-danger"><i class="bi bi-instagram fs-4"></i></a>
+                <a href="#katalog" class="btn btn-order d-none d-md-block">Beli Sekarang</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-section text-center text-lg-start">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 animate__animated animate__fadeInLeft">
+                    <span class="badge px-3 py-2 rounded-pill mb-3" style="background: #e8f5e9; color: #27ae60;">✨ 100% Fresh & Premium</span>
+                    <h1 class="display-4 fw-bold mb-4">Toko Buah <span class="text-success">Segar Lokal & Import</span> Makassar.</h1>
+                    <p class="lead text-muted mb-5">Pesan Buah Dengan Mudah Secara Online, dan Lengkapi Hidup Sehatmu Dengan Keluarga Bersama Buahta Makassar.</p>
+                    <div class="d-flex gap-3 justify-content-center justify-content-lg-start">
+                        <a href="#katalog" class="btn btn-order btn-lg px-4">Lihat Katalog</a>
+                        <a href="#lokasi" class="btn btn-outline-success btn-lg rounded-pill px-4">Lokasi</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 mt-5 mt-lg-0 animate__animated animate__zoomIn">
+                    <img src="gambar/toko.jpg" class="img-fluid rounded-5 shadow-lg" alt="Hero" style="max-height: 400px; width: 100%; object-fit: cover;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="katalog" class="container py-5">
+        <h2 class="fw-bold mb-5 text-center">Menu Buah Hari Ini</h2>
+        <div id="product-container" class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4"></div>
+    </section>
+
+    <section id="lokasi" class="container py-5 border-top">
+        <div class="row g-4 align-items-center">
+            <div class="col-md-5">
+                <h3 class="fw-bold text-success mb-3"><i class="bi bi-geo-alt-fill me-2"></i>Lokasi Toko</h3>
+                <div class="bg-light p-4 rounded-4 shadow-sm mb-3">
+                    <p class="mb-2"><strong>Alamat:</strong> BTP Blok L No.10, Tamalanrea, Makassar</p>
+                    <p class="mb-0"><strong>Jam Buka:</strong> 08.00 - 22.00 WITA</p>
+                    <p class="mb-0"><strong>Pembayaran BCA:</strong> 3900188764 - ABD ARAS HAS</p>
+                </div>
+                <a href="https://share.google/IQrDX6SPJFKj0n1Ov" target="_blank" class="btn btn-outline-success w-100 rounded-pill">Buka Maps</a>
+            </div>
+            <div class="col-md-7">
+                <div class="map-box shadow-sm rounded-5 overflow-hidden border" style="height: 350px;">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3973.805545262791!2d119.50155097413645!3d-5.135010651919799!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dbef91500989f67%3A0x6a2c286618bc6d11!2sBTP%20Blok%20L!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div id="cart-bar" class="animate__animated animate__fadeInLeft" onclick="openCheckout()">
+        <div class="d-flex align-items-center gap-3">
+            <div class="bg-success text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 45px; height: 45px;">
+                <i class="bi bi-cart-fill fs-5"></i>
+            </div>
+            <div>
+                <div class="small text-muted fw-bold" id="cart-count">0 Item</div>
+                <div class="fw-bold text-success fs-5" id="cart-total-display">Rp 0</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="orderModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content shadow-lg">
+                <div class="modal-body p-4">
+                    <h4 class="fw-bold text-success" id="m_name text-center">Pilih Varian</h4>
+                    <div class="mb-3">
+                        <label class="small fw-bold">Varian</label>
+                        <select id="m_variant" class="form-select" onchange="calculateLivePrice()"></select>
+                    </div>
+                    <div id="m_weight_box" class="mb-3">
+                        <label class="small fw-bold">Berat</label>
+                        <select id="m_weight" class="form-select" onchange="calculateLivePrice()">
+                            <option value="0.5">500 Gram</option>
+                            <option value="1" selected>1 Kilogram</option>
+                            <option value="2">2 Kilogram</option>
+                        </select>
+                    </div>
+                    <div id="m_qty_box" class="mb-3 d-none">
+                        <label class="small fw-bold">Jumlah</label>
+                        <input type="number" id="m_qty" class="form-control" value="1" min="1" oninput="calculateLivePrice()">
+                    </div>
+                    <div class="live-price-box p-3 text-center" style="background:#f0fff4; border:2px dashed #27ae60; border-radius:15px;">
+                        <h3 class="fw-bold text-success mb-0" id="live-price-text">Rp 0</h3>
+                    </div>
+                    <button class="btn btn-order w-100 py-3 mt-4" onclick="addToCart()">Masukkan ke Keranjang</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="checkoutModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body p-4">
+                    <h4 class="fw-bold text-success mb-4">Detail Pesanan</h4>
+                    <div id="checkout-list" class="mb-4 bg-light p-3 rounded-4 border"></div>
+                    <input type="text" id="c_name" class="form-control mb-2" placeholder="Nama Lengkap" required>
+                    <textarea id="c_note" class="form-control mb-3" placeholder="Catatan (opsional)"></textarea>
+                    <div class="text-center mb-4">
+                        <span class="text-muted small">Total Pembayaran:</span>
+                        <h3 class="fw-bold text-success" id="final-total">Rp 0</h3>
+                    </div>
+                    <button class="btn btn-order w-100 py-3" onclick="sendToWA()">Kirim ke WhatsApp</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+	
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="menu.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
